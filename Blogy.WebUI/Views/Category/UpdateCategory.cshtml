@@ -1,0 +1,26 @@
+﻿@model Blogy.EntityLayer.Concrete.Category
+@{
+    Layout = null;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCategory</title>
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <label>Kategori ID</label>
+            <input  type="text" class="form-control" asp-for="CategoryID" readonly />
+            <br />
+            <label>Kategori Adını Giriniz</label>
+            <input type="text" class="form-control" asp-for="CategoryName" />
+            <br />
+            <button class="btn btn-outline-success">Kategoriyi Güncelle</button>
+        </form>
+    </div>
+
+</body>
+</html>
+

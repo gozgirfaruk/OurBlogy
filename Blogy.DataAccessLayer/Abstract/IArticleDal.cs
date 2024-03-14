@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Blogy.DataAccessLayer.Abstract
 {
-    public interface IArticleDal:IGenericDal<Article>
+    public interface IArticleDal : IGenericDal<Article>
     {
+       
     }
 }

@@ -10,11 +10,14 @@ namespace Blogy.DataAccessLayer.Repository
 {
     public class GenericRepository<T> : IGenericDal<T> where T : class
     {
-        private readonly BlogyContext _context;
-        void IGenericDal<T>.Delete(T entity)
+         BlogyContext _context =new BlogyContext();
+
+
+        void IGenericDal<T>.Delete(int id)
         {
-            var values = _context.Set<T>().Find(entity);
+            var values = _context.Set<T>().Find(id);
             _context.Set<T>().Remove(values);
+            _context.SaveChanges();
         }
 
         List<T> IGenericDal<T>.GetAll()
