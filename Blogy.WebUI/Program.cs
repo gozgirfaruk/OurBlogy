@@ -4,6 +4,7 @@ using Blogy.DataAccessLayer.Abstract;
 using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
+using Blogy.WebUI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BlogyContext>();
 builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService,CategoryMenager>();
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>();
+builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>().AddErrorDescriber<CustonIdentityValidator>();
 
 var app = builder.Build();
 
