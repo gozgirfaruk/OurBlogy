@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace Blogy.DataAccessLayer.EntityFramework
 {
-    public class EfWriterDal : GenericRepository<Writer>, IWriterDal
-    {
-    }
+	public class EfWriterDal : GenericRepository<Writer>, IWriterDal
+	{
+	
+	}
 }

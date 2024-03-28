@@ -14,6 +14,8 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<BlogyContext>();
 builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService,CategoryMenager>();
+builder.Services.AddScoped<IArticleService,ArticleMenager>();
+builder.Services.AddScoped<IArticleDal,EfArticleDal>();
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>().AddErrorDescriber<CustonIdentityValidator>();
 
 var app = builder.Build();

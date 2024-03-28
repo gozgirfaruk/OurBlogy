@@ -6,6 +6,7 @@ namespace Blogy.WebUI.Controllers
     {
         public IActionResult BlogList()
         {
+           
             return View();
         }
     }
