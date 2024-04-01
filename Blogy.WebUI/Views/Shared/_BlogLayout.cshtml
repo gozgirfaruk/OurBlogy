@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @await Component.InvokeAsync("_BlogListHeadComponentPartial")
+    <title>_BlogLayout</title>
+</head>
+<body>
+    @await Component.InvokeAsync("_BlogListNavbarComponent")
+    @RenderBody()
+    @await Component.InvokeAsync("_BlogListFooterComponentPartial")
+</body>
+</html>
+<script src="~/BlogyBlogy/js/bootstrap.bundle.min.js"></script>
+<script src="~/BlogyBlogy/js/tiny-slider.js"></script>
+<script src="~/BlogyBlogy/js/flatpickr.min.js"></script>
+
+
+<script src="~/BlogyBlogy/js/aos.js"></script>
+<script src="~/BlogyBlogy/js/glightbox.min.js"></script>
+<script src="~/BlogyBlogy/js/navbar.js"></script>
+<script src="~/BlogyBlogy/js/counter.js"></script>
+<script src="~/BlogyBlogy/js/custom.js"></script>

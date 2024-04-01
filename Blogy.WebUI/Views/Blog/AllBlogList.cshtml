@@ -1,0 +1,84 @@
+﻿@using Blogy.EntityLayer.Concrete
+@model List<Article>
+@{
+    Layout = "/Views/Shared/_BlogLayout.cshtml";
+}
+
+<!doctype html>
+<html lang="en">
+
+<body>
+
+	<div class="site-mobile-menu site-navbar-target">
+		<div class="site-mobile-menu-header">
+			<div class="site-mobile-menu-close">
+				<span class="icofont-close js-menu-toggle"></span>
+			</div>
+		</div>
+		<div class="site-mobile-menu-body"></div>
+	</div>
+
+	
+
+	<div class="section search-result-wrap">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="heading">Tüm İçerikler </div>
+				</div>
+			</div>
+			<div class="row posts-entry">
+				<div class="col-lg-8">
+					@foreach(var item in Model)
+					{
+						<div class="blog-entry d-flex blog-entry-search-item">
+						<a href="#" class="img-link me-4">
+							<img src="@item.CoverImageUrl" alt="Image" class="img-fluid">
+						</a>
+						<div>
+							<span class="date">@item.CreatedDate.ToString("dd.MMM.yyyy") &bullet; <a href="#">@item.Category.CategoryName</a></span>
+							<h2><a href="single.html">@item.Title</a></h2>
+							<p>İçeriğe Ait Yazıya Ulaşmak İçin Lütfen İçerik Detay Sayfasına Gidiniz</p>
+							<p><a href="/Blog/BlogDetail/@item.ArticleID" class="btn btn-sm btn-outline-primary">Görüntüle</a></p>
+						</div>
+					</div>
+					}
+					
+					<div class="row text-start pt-5 border-top">
+						<div class="col-md-12">
+							<div class="custom-pagination">
+								
+								<span>1</span>
+								<a href="#">2</a>
+								<a href="#">3</a>
+								<a href="#">4</a>
+								<span>...</span>
+								<a href="#">15</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="col-lg-4 sidebar">
+					
+					<div class="sidebar-box">
+						<h3 class="heading">Yazar ve Yazara ait Başlık sayısı getirilebilir</h3>
+						<ul class="categories">
+							<li><a href="#">Ekonomi <span>(12)</span></a></li>
+							<li><a href="#">Moda <span>(22)</span></a></li>
+							<li><a href="#">Sinema <span>(37)</span></a></li>
+							<li><a href="#">Sağlık <span>(42)</span></a></li>
+							<li><a href="#">Adventure <span>(14)</span></a></li>
+						</ul>
+					</div>
+					<!-- END sidebar-box -->
+					@await Html.PartialAsync("AllBlogTagPartial")
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+  </body>
+  </html>

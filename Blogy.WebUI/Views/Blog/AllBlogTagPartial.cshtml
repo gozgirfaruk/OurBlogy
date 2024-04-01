@@ -1,0 +1,13 @@
+﻿@using Blogy.EntityLayer.Concrete
+@model List<Article>
+
+<div class="sidebar-box">
+	<h3 class="heading">Başlıklar</h3>
+	<ul class="tags">
+		@foreach(var item in Model)
+		{
+			<li><a href="#">@item.Category.CategoryName</a></li>
+		}
+		
+	</ul>
+</div>

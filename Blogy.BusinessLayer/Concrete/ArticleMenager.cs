@@ -18,7 +18,17 @@ namespace Blogy.BusinessLayer.Concrete
             _articleDal = articleDal;
         }
 
-        public void TDelete(int id)
+		public List<Article> GetArticleWithCategory()
+		{
+			return _articleDal.GetArticleWithCategory();
+		}
+
+		public List<Article> GetArticleWithWriter()
+		{
+			return _articleDal.GetArticleWithWriter();
+		}
+
+		public void TDelete(int id)
         {
            if(id!=0)
             {

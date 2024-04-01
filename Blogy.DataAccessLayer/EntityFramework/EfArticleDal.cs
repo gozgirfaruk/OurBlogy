@@ -2,6 +2,7 @@
 using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.Repository;
 using Blogy.EntityLayer.Concrete;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,18 @@ namespace Blogy.DataAccessLayer.EntityFramework
 {
 	public class EfArticleDal : GenericRepository<Article>, IArticleDal
 	{
-		
+		BlogyContext context =new BlogyContext();
+
+		public List<Article> GetArticleWithCategory()
+		{
+			var values = context.Articles.Include(x=>x.Category).ToList();
+			return values;
+		}
+
+		public List<Article> GetArticleWithWriter()
+		{
+			var values =context.Articles.Include(x=>x.Writer).ToList();
+			return values;
+		}
 	}
 }
