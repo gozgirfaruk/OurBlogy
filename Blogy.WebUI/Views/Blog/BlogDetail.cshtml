@@ -4,7 +4,6 @@
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
-
 <!doctype html>
 <html lang="en">
 
@@ -22,11 +21,11 @@
                         
                             <div class="row my-4">
                                 <div class="col-md-12 mb-4">
-                                    <img src="#" alt="Image placeholder" class="img-fluid rounded">
+                                    <img src="@Html.DisplayFor(x=>x.CoverImageUrl)" alt="Image placeholder" class="img-fluid rounded">
                                 </div>
-
+                                
                             </div>
-                            <p>#</p>
+                            <p>@Html.DisplayFor(x=>x.Description)</p>
                         
                     </div>
 
@@ -141,24 +140,16 @@
                             </form>
                         </div>
                     </div>
-
                 </div>
-
                 <div class="col-md-12 col-lg-4 sidebar">
-
                     <div class="sidebar-box">
                         <div class="bio text-center">
-                            <img src="images/person_2.jpg" alt="Image Placeholder" class="img-fluid mb-3">
+                            <img src="https://img.freepik.com/free-photo/young-handsome-man-wearing-casual-tshirt-blue-background-happy-face-smiling-with-crossed-arms-looking-camera-positive-person_839833-12963.jpg?t=st=1711957867~exp=1711961467~hmac=8e549259a468dd800e83983c3aed3c047cab00a2c1e158d3a33fb1e83b787893&w=1380" alt="Image Placeholder" class="img-fluid mb-3">
                             <div class="bio-body">
-                                <h2>Hannah Anderson</h2>
-                                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem facilis sunt repellendus excepturi beatae porro debitis voluptate nulla quo veniam fuga sit molestias minus.</p>
-                                <p><a href="#" class="btn btn-primary btn-sm rounded px-2 py-2">Read my bio</a></p>
-                                <p class="social">
-                                    <a href="#" class="p-2"><span class="fa fa-facebook"></span></a>
-                                    <a href="#" class="p-2"><span class="fa fa-twitter"></span></a>
-                                    <a href="#" class="p-2"><span class="fa fa-instagram"></span></a>
-                                    <a href="#" class="p-2"><span class="fa fa-youtube-play"></span></a>
-                                </p>
+                                <h2>Ömer Faruk Gözegir</h2>
+                                <p class="mb-4">Jr .NEt Developer</p>
+                                <p><a href="#" class="btn btn-primary btn-sm rounded px-2 py-2">Hakkımda</a></p>
+
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,7 @@
 ﻿using Blogy.BusinessLayer.Abstract;
 using Blogy.BusinessLayer.Concrete;
 using Blogy.DataAccessLayer.EntityFramework;
+using Blogy.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
@@ -25,7 +26,7 @@ namespace Blogy.WebUI.Controllers
         public IActionResult AllBlogList(int page=1)
         {
             var values = _article.GetArticleWithCategory();
-      
+         
             return View(values);
         }
 
@@ -38,7 +39,6 @@ namespace Blogy.WebUI.Controllers
         public IActionResult BlogDetail(int id)
         {
             var values = _article.TGetyById(id);
-           
             return View(values);
         }
 

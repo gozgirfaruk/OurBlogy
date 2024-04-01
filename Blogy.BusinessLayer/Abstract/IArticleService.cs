@@ -10,7 +10,7 @@ namespace Blogy.BusinessLayer.Abstract
 	public interface IArticleService : IGenericService<Article>
 	{
 		public List<Article> GetArticleWithWriter();
-		public List<Article> GetArticleWithCategory();
+        public List<Article> GetArticleWithCategory();
 
 	}
 }

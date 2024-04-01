@@ -28,7 +28,7 @@ namespace Blogy.BusinessLayer.Concrete
 			return _articleDal.GetArticleWithWriter();
 		}
 
-		public void TDelete(int id)
+        public void TDelete(int id)
         {
            if(id!=0)
             {
