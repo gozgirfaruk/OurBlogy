@@ -38,6 +38,7 @@ namespace Blogy.WebUI.Controllers
 
         public IActionResult BlogDetail(int id)
         {
+            TempData["a"] = id;
             var values = _article.TGetyById(id);
             return View(values);
         }

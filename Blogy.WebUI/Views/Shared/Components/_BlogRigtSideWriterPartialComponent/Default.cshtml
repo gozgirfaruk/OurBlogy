@@ -1,0 +1,19 @@
+﻿@using Blogy.EntityLayer.Concrete
+@model List<Article>
+
+<div class="col-md-12 col-lg-4 sidebar">
+    <div class="sidebar-box">
+        @foreach (var item in Model)
+        {
+            <div class="bio text-center">
+                <img src="@item.Writer.ImageUrl" alt="Image Placeholder" class="img-fluid mb-3">
+            <div class="bio-body">
+                <h2>@item.Writer.Name</h2>
+                <p class="mb-4">@item.Writer.Description</p>
+                <p><a href="#" class="btn btn-primary btn-sm rounded px-2 py-2">Hakkımda</a></p>
+
+            </div>
+        </div>
+        }
+    </div>
+</div>
