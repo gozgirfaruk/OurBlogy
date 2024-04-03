@@ -14,9 +14,7 @@ namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
 
         public IViewComponentResult Invoke()
         {
-            int number = Convert.ToInt32(TempData["a"]);
-            var values = _articleService.GetArticleWithWriter().Where(x=>x.WriterID == number).ToList();    
-            return View(values);
+            return View();
         }
     }
 }

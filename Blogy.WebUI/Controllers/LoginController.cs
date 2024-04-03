@@ -30,7 +30,7 @@ namespace Blogy.WebUI.Controllers
                 var result = await _signInManager.PasswordSignInAsync(p.Username, p.Passoword,false,false);
                 if ((result.Succeeded))
                 {
-                    return RedirectToAction("Index", "Category");
+                    return RedirectToAction("BlogList", "Blog");
                 }
                 else
                 {

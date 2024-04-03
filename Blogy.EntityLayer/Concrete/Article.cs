@@ -12,7 +12,10 @@ namespace Blogy.EntityLayer.Concrete
         public string Title { get; set; }
         public DateTime CreatedDate { get; set; }
         public string Description { get; set; }
+        public string Explanation { get; set; }
         public string CoverImageUrl { get; set; }
+        public string? ImageUrlA { get; set; }
+        public string? ImageUrlB { get; set; }
         public int CategoryID { get; set; }
         public Category Category { get; set; }
 

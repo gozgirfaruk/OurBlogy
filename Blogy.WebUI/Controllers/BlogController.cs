@@ -23,7 +23,7 @@ namespace Blogy.WebUI.Controllers
             return View();
         }
 
-        public IActionResult AllBlogList(int page=1)
+        public IActionResult AllBlogList()
         {
             var values = _article.GetArticleWithCategory();
          
@@ -38,7 +38,7 @@ namespace Blogy.WebUI.Controllers
 
         public IActionResult BlogDetail(int id)
         {
-            TempData["a"] = id;
+            
             var values = _article.TGetyById(id);
             return View(values);
         }

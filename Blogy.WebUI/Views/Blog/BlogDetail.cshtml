@@ -3,10 +3,6 @@
     ViewData["Title"] = "BlogDetail";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -22,23 +18,37 @@
 
                     <div class="post-content-body">
 
-
-                        <div class="row my-4">
-                            <div class="col-md-12 mb-4">
-                                 <img src="@Html.DisplayFor(x=>x.CoverImageUrl)" alt="Image placeholder" class="img-fluid rounded">
+                        <div class="post-content-body">
+                            <p>@Html.DisplayFor(x=>x.Description)</p>
+                            <div class="row my-4">
+                                <div class="col-md-12 mb-4">
+                                    <img src="@Html.DisplayFor(x=>x.CoverImageUrl)" alt="Image placeholder" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <img src="@Html.DisplayFor(x=>x.ImageUrlA)" alt="Image placeholder" class="img-fluid rounded">
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <img src="@Html.DisplayFor(x=>x.ImageUrlB)" alt="Image placeholder" class="img-fluid rounded">
+                                </div>
                             </div>
-
+                            <p>@Html.DisplayFor(x=>x.Explanation)</p>
                         </div>
-                         <p>@Html.DisplayFor(x=>x.Description)</p>
+
 
                     </div>
 
                     @await Component.InvokeAsync("_BlogDetailCommentPartialComponent")
-                    
+
                 </div>
-                @await Component.InvokeAsync("_BlogRigtSideWriterPartialComponent") 
+                @await Component.InvokeAsync("_BlogRigtSideWriterPartialComponent")
             </div>
     </section>
 </body>
 </html>
+
+
+
+
+    
+
 
