@@ -16,6 +16,11 @@ builder.Services.AddScoped<ICategoryDal,EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService,CategoryMenager>();
 builder.Services.AddScoped<IArticleService,ArticleMenager>();
 builder.Services.AddScoped<IArticleDal,EfArticleDal>();
+builder.Services.AddScoped<IWriterService,WriterMenager>();
+builder.Services.AddScoped<IWriterDal,EfWriterDal>();
+builder.Services.AddScoped<IAboutDal,EfAboutDal>();
+builder.Services.AddScoped<IAboutService,AboutMenager>();
+
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>().AddErrorDescriber<CustonIdentityValidator>();
 
 var app = builder.Build();

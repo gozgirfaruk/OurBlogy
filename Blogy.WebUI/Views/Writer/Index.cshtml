@@ -4,5 +4,36 @@
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
 }
 
-<h1>Index</h1>
-@await Component.InvokeAsync("_WriterListPartialComponent")
+<!-- /*
+* Template Name: Blogy
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+
+<body>
+
+
+	<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('/BlogyBlogy/images/hero_5.jpg');">
+		<div class="container">
+			<div class="row same-height justify-content-center">
+				<div class="col-md-6">
+					<div class="post-entry text-center">
+						<h1 class="mb-4">Blog Yazarlarımız</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	@await Component.InvokeAsync("_AboutWritingComponent")
+	
+
+	<div style="height:35px; width:100%; background-color:#214252"></div>
+
+    @await Component.InvokeAsync("_WriterListComponent")
+
+  </body>
+  </html>
+
