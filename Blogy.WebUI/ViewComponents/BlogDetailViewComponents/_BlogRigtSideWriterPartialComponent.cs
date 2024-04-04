@@ -12,9 +12,10 @@ namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
             _articleService = articleService;
         }
 
-        public IViewComponentResult Invoke()
+        public IViewComponentResult Invoke(int id)
         {
-            return View();
+            var values = _articleService.TGetWriterInfoByArticleWriter(id);
+            return View(values);
         }
     }
 }
