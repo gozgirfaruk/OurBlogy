@@ -39,7 +39,8 @@ namespace Blogy.WebUI.Controllers
         public IActionResult BlogDetail(int id)
         {
             
-            var values = _article.TGetyById(id);
+           var values = _article.TGetyById(id);
+            ViewBag.i = id;
             return View(values);
         }
 

@@ -8,7 +8,7 @@
 
 <body>
 
-    @await Component.InvokeAsync("_BlogDetailByCoverInfoPartialComponent")
+    @await Component.InvokeAsync("_BlogDetailByCoverInfoPartialComponent",new {id=ViewBag.i})
 
     <section class="section">
         <div class="container">
@@ -37,7 +37,7 @@
 
                     </div>
 
-                    @await Component.InvokeAsync("_BlogDetailCommentPartialComponent")
+                    @await Component.InvokeAsync("_BlogDetailCommentPartialComponent", new { id = ViewBag.i })
 
                 </div>
                 @await Component.InvokeAsync("_BlogRigtSideWriterPartialComponent")

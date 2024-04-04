@@ -28,7 +28,12 @@ namespace Blogy.BusinessLayer.Concrete
            return _commentDal.GetAll(); 
         }
 
-        public Comment TGetyById(int id)
+		public List<Comment> TGetCommentByArticleID(int id)
+		{
+			return _commentDal.GetCommentByArticleID(id);
+		}
+
+		public Comment TGetyById(int id)
         {
             return _commentDal.GetyById(id);
         }
