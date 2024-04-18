@@ -173,6 +173,9 @@ namespace Blogy.DataAccessLayer.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArticleID"), 1L, 1);
 
+                    b.Property<int>("AppUserID")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryID")
                         .HasColumnType("int");
 
@@ -205,6 +208,8 @@ namespace Blogy.DataAccessLayer.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("ArticleID");
+
+                    b.HasIndex("AppUserID");
 
                     b.HasIndex("CategoryID");
 
@@ -413,6 +418,12 @@ namespace Blogy.DataAccessLayer.Migrations
 
             modelBuilder.Entity("Blogy.EntityLayer.Concrete.Article", b =>
                 {
+                    b.HasOne("Blogy.EntityLayer.Concrete.AppUser", "AppUser")
+                        .WithMany("Articles")
+                        .HasForeignKey("AppUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Blogy.EntityLayer.Concrete.Category", "Category")
                         .WithMany("Articles")
                         .HasForeignKey("CategoryID")
@@ -424,6 +435,8 @@ namespace Blogy.DataAccessLayer.Migrations
                         .HasForeignKey("WriterID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("AppUser");
 
                     b.Navigation("Category");
 
@@ -490,6 +503,11 @@ namespace Blogy.DataAccessLayer.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Blogy.EntityLayer.Concrete.AppUser", b =>
+                {
+                    b.Navigation("Articles");
                 });
 
             modelBuilder.Entity("Blogy.EntityLayer.Concrete.Article", b =>

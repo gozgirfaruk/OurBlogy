@@ -21,7 +21,10 @@ namespace Blogy.EntityLayer.Concrete
 
         public int WriterID { get; set; }
         public Writer Writer { get; set; }
+        public int AppUserID { get; set; }
+        public AppUser? AppUser { get; set; }
 
         public List<Comment> Comments { get; set; }
+    
     }
 }

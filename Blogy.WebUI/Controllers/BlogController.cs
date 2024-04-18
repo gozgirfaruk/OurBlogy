@@ -16,8 +16,6 @@ namespace Blogy.WebUI.Controllers
             _article = article;
         }
 
-
-
         public IActionResult BlogList()
         {
             return View();

@@ -45,6 +45,11 @@ namespace Blogy.BusinessLayer.Concrete
             return _articleDal.GetAll();
         }
 
+        public List<Article> TGetArticlesByWithWriter(int id)
+        {
+            return _articleDal.GetArticlesByWithWriter(id);
+        }
+
         public Writer TGetWriterInfoByArticleWriter(int id)
         {
            return _articleDal.GetWriterInfoByArticleWriter(id);

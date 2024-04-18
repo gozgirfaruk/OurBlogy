@@ -28,6 +28,12 @@ namespace Blogy.DataAccessLayer.EntityFramework
 			return values;
 		}
 
+        public List<Article> GetArticlesByWithWriter(int id)
+        {
+            var values =context.Articles.Where(x=>x.AppUserID==id).ToList();
+			return values;
+        }
+
         public Writer GetWriterInfoByArticleWriter(int id)
         {
 			var values = context.Articles.Where(x => x.ArticleID == id).Select(y => y.Writer).FirstOrDefault();
