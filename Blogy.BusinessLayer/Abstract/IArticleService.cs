@@ -12,7 +12,10 @@ namespace Blogy.BusinessLayer.Abstract
 		public List<Article> GetArticleWithWriter();
         public List<Article> GetArticleWithCategory();
         Writer TGetWriterInfoByArticleWriter(int id);
-        List<Article> TGetArticlesByWithWriter(int id);
+        List<Article> TGetArticlesByWriter(int id);
+
+
+    
 
     }
 }

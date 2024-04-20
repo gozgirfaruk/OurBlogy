@@ -16,7 +16,13 @@ namespace Blogy.DataAccessLayer.EntityFramework
 	{
 		BlogyContext context =new BlogyContext();
 
-		public List<Article> GetArticleWithCategory()
+        public List<Article> GetArticlesByWriter(int id)
+        {
+            var values = context.Articles.Where(x => x.AppUserID == id).ToList();
+			return values;
+        }
+
+        public List<Article> GetArticleWithCategory()
 		{
 			var values = context.Articles.Include(x=>x.Category).ToList();
 			return values;
@@ -28,16 +34,11 @@ namespace Blogy.DataAccessLayer.EntityFramework
 			return values;
 		}
 
-        public List<Article> GetArticlesByWithWriter(int id)
-        {
-            var values =context.Articles.Where(x=>x.AppUserID==id).ToList();
-			return values;
-        }
-
         public Writer GetWriterInfoByArticleWriter(int id)
         {
 			var values = context.Articles.Where(x => x.ArticleID == id).Select(y => y.Writer).FirstOrDefault();
 			return values;
         }
+
     }
 }
