@@ -42,16 +42,17 @@
                                     <tr>
                                         <td>@item.ArticleID</td>
                                         <td>@item.Title</td>
-                                        <td>@item.CreatedDate</td>
+                                        <td>@item.CreatedDate.ToString("dd MMMM yyyy")</td>
                                         <td>@item.CategoryID</td>
-                                        <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleID" class="btn btn-danger">Sil</a></td>
-                                        <td><a href="#" class="btn btn-success">Güncelle</a></td>
-                                        <td><a href="#" class="btn btn-warning">Yorumlar</a></td>
+                                        <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
+                                        <td><a href="#" class="btn btn-outline-success btn-rounded">Güncelle</a></td>
+                                        <td><a href="#" class="btn btn-outline-warning btn-rounded">Yorumlar</a></td>
                                     </tr>
                                 }
                             </tbody>
                         </table>
-                        <a href="#" class="btn btn-primary">Yeni Blog Girişi</a>
+                        <br />
+                        <a href="#" class="btn btn-outline-primary btn-rounded">Yeni Blog Girişi</a>
                     </div>
                 </div>
             </div>
