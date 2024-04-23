@@ -1,0 +1,12 @@
+﻿@model List<Social>
+
+
+<div class="col-lg-8 mx-auto text-center mb-4 mt-2">
+    @foreach(var item in Model)
+    {
+        <a href="@item.Url" target="_blank" class="text-secondary me-xl-4 me-4">
+        <span class="text-lg fab  @item.Icon"></span>
+    </a>
+    }
+ 
+</div>
