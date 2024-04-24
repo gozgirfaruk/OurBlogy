@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
 {
+
     public class LoginController : Controller
     {
 
@@ -26,24 +27,30 @@ namespace Blogy.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Index(UserSignInViewModel p)
         {
-            if (p.Username!=null && p.Passoword!=null)
+            if (p.Username != null && p.Passoword != null)
             {
-                var result = await _signInManager.PasswordSignInAsync(p.Username, p.Passoword,false,false);
+                var result = await _signInManager.PasswordSignInAsync(p.Username, p.Passoword, false, false);
                 if ((result.Succeeded))
                 {
-                    return RedirectToAction("BlogList", "Blog");
+                    return RedirectToAction("MyBlogList", "Blog");
                 }
                 else
                 {
                     ModelState.AddModelError("", "Kullanıcı Adı Veya Şifre Hatalı");
                 }
-               
+
             }
             else
             {
                 ModelState.AddModelError("", "Lütfen Boş Alan Geçmeyiniz.");
             }
             return View();
+        }
+
+        public async Task<IActionResult> SignOut()
+        {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index","Login");
         }
     }
 }
