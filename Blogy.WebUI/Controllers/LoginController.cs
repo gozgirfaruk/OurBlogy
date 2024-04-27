@@ -7,50 +7,51 @@ using Microsoft.AspNetCore.Mvc;
 namespace Blogy.WebUI.Controllers
 {
 
-    public class LoginController : Controller
-    {
+	public class LoginController : Controller
+	{
 
-        private readonly SignInManager<AppUser> _signInManager;
+		private readonly SignInManager<AppUser> _signInManager;
 
-        public LoginController(SignInManager<AppUser> signInManager)
-        {
-            _signInManager = signInManager;
-        }
+		public LoginController(SignInManager<AppUser> signInManager)
+		{
+			_signInManager = signInManager;
+		}
 
 
-        [HttpGet]
-        public IActionResult Index()
-        {
-            return View();
-        }
+		[HttpGet]
+		public IActionResult Index()
+		{
+			return View();
+		}
 
-        [HttpPost]
-        public async Task<IActionResult> Index(UserSignInViewModel p)
-        {
-            if (p.Username != null && p.Passoword != null)
-            {
-                var result = await _signInManager.PasswordSignInAsync(p.Username, p.Passoword, false, false);
-                if ((result.Succeeded))
-                {
-                    return RedirectToAction("MyBlogList", "Blog");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Kullanıcı Adı Veya Şifre Hatalı");
-                }
+		[HttpPost]
+		public async Task<IActionResult> Index(UserSignInViewModel p)
+		{
+			if (p.Username != null && p.Passoword != null)
+			{
+				var result = await _signInManager.PasswordSignInAsync(p.Username, p.Passoword, false, false);
+				if ((result.Succeeded))
+				{
+					return RedirectToAction("MyBlogList", "Blog");
+				}
+				else
+				{
+					ModelState.AddModelError("", "Kullanıcı Adı Veya Şifre Hatalı");
+				}
 
-            }
-            else
-            {
-                ModelState.AddModelError("", "Lütfen Boş Alan Geçmeyiniz.");
-            }
-            return View();
-        }
+			}
+			else
+			{
+				ModelState.AddModelError("", "Lütfen Boş Alan Geçmeyiniz.");
+			}
+			return View();
+		}
 
-        public async Task<IActionResult> SignOut()
-        {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction("Index","Login");
-        }
-    }
+		public async Task<IActionResult> SignOut()
+		{
+			await _signInManager.SignOutAsync();
+			return RedirectToAction("Index", "Login");
+		}
+
+	}
 }

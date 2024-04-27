@@ -1,22 +1,24 @@
 ﻿using Blogy.BusinessLayer.Abstract;
 using Blogy.BusinessLayer.Concrete;
+using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
 {
-    
     public class BlogController : Controller
     {
         private readonly IArticleService _article;
+        private readonly BlogyContext _blogyContext;
 
-        public BlogController(IArticleService article)
-        {
-            _article = article;
-        }
+		public BlogController(IArticleService article, BlogyContext blogyContext)
+		{
+			_article = article;
+			_blogyContext = blogyContext;
+		}
 
-        public IActionResult BlogList()
+		public IActionResult BlogList()
         {
             return View();
         }

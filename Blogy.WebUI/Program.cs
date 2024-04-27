@@ -5,6 +5,7 @@ using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
 using Blogy.WebUI.Models;
+using Microsoft.Build.Execution;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,6 +28,9 @@ builder.Services.AddScoped<IAboutService,AboutMenager>();
 
 builder.Services.AddScoped<ICommentDal,EfCommentDal>();
 builder.Services.AddScoped<ICommentService,CommentMenager>();
+
+builder.Services.AddScoped<INotificationDal,EfNotificationDal>();
+builder.Services.AddScoped<INotificationService,NotificationMenager>();
 
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>().AddErrorDescriber<CustonIdentityValidator>();
 

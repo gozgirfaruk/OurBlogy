@@ -1,0 +1,24 @@
+﻿@model List<Notification>
+
+<div class="dropdown-menu navbar-dropdown navbar-dropdown-large preview-list" aria-labelledby="notificationDropdown">
+    <h6 class="p-3 mb-0">Notifications</h6>
+    @foreach(var item in Model)
+    {
+        <a class="dropdown-item preview-item">
+        <div class="preview-thumbnail">
+                <img src="https://img.freepik.com/free-vector/illustrationn-megaphone-monochrome-style-isolated-white-background_1284-38767.jpg?t=st=1714234370~exp=1714237970~hmac=d4a9ee7283f38e39e20bbf2709bd773a4fc46661719d1e2e8c13e0d9de0c1ce6&w=826" alt="" class="profile-pic" />
+        </div>
+        <div class="preview-item-content">
+            <p class="mb-0">
+                @item.Title <span class="text-small text-muted">@item.Description</span>
+            </p>
+            <span class="text-small text-muted">@item.Date.ToShortDateString()</span>
+        </div>
+    </a>
+    }
+    
+    
+    
+    <div class="dropdown-divider"></div>
+    <p class="p-3 mb-0">Tüm Duyuruları Görüntüle</p>
+</div>
