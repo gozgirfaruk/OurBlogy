@@ -31,7 +31,7 @@ namespace Blogy.WebUI.Controllers
                     Surname = createRegister.Surname,
                     Email = createRegister.Email,
                     UserName = createRegister.Username,
-                    //Status = true,
+                    Status = true,
                     Description = "a",
                     ImageUrl = "b"
                 };

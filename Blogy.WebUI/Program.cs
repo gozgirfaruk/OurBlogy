@@ -5,6 +5,7 @@ using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
 using Blogy.WebUI.Models;
+using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Build.Execution;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -34,8 +35,18 @@ builder.Services.AddScoped<INotificationService,NotificationMenager>();
 
 builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>().AddErrorDescriber<CustonIdentityValidator>();
 
+builder.Services.AddLocalization(opt =>
+{
+    opt.ResourcesPath = "Resource";
+});
+builder.Services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
+
+var supportedCultures = new[] { "en", "fr", "tr", "de" };
+var localizationOptions = new RequestLocalizationOptions().SetDefaultCulture(supportedCultures[0]).AddSupportedCultures(supportedCultures).AddSupportedCultures(supportedCultures);
+ 
 var app = builder.Build();
 
+app.UseRequestLocalization(localizationOptions);
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {

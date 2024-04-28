@@ -30,7 +30,6 @@
                                     <th>#</th>
                                     <th>Blog Başlığı.</th>
                                     <th>Tarih</th>
-                                    <th>Kategori</th>
                                     <th>Sil</th>
                                     <th>Güncelle</th>
                                     <th>Blog Yorumları</th>
@@ -43,7 +42,6 @@
                                         <td>@item.ArticleID</td>
                                         <td>@item.Title</td>
                                         <td>@item.CreatedDate.ToString("dd MMMM yyyy")</td>
-                                        <td>@item.CategoryID</td>
                                         <td><a href="/Writer/Blog/DeleteBlog/@item.ArticleID" class="btn btn-outline-danger btn-rounded">Sil</a></td>
                                         <td><a href="#" class="btn btn-outline-success btn-rounded">Güncelle</a></td>
                                         <td><a href="#" class="btn btn-outline-warning btn-rounded">Yorumlar</a></td>

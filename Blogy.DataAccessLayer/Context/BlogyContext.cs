@@ -26,5 +26,6 @@ namespace Blogy.DataAccessLayer.Context
         public DbSet<Social> Socials { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Notification> Notifications { get; set; }
+        public DbSet<Admin> Admins { get; set; }
     }
 }

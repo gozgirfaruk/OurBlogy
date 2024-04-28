@@ -2,20 +2,19 @@
 @{
     Layout = null;
 }
-
-
 <!DOCTYPE html>
 <html lang="en">
 
-@await Component.InvokeAsync("_HeadComponentPartial")
+@await Component.InvokeAsync("_LayoutHeadPartial")
 
 <body>
     <div class="container-scroller">
 
-        @await Component.InvokeAsync("_SidebarComponentPartial")
-       
+        @await Component.InvokeAsync("_LayoutSidebar")
+
+
         <div class="container-fluid page-body-wrapper">
-            @await Component.InvokeAsync("_NavbarComponentPartial")
+           @*  @await Component.InvokeAsync("_LayoutNavbar") *@
 
             <div class="main-panel">
 

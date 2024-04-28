@@ -14,7 +14,7 @@ namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
 
 		public IViewComponentResult Invoke()
         {
-            var values = _blogyContext.Articles.Take(3).ToList();
+            var values = _blogyContext.Articles.OrderByDescending(x=>x.CreatedDate).Take(3).ToList();
             return View(values);
         }
     }

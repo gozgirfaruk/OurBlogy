@@ -39,14 +39,14 @@ namespace Blogy.BusinessLayer.Concrete
                 //hata mesajı
             }
         }
-
+        //TGetArticlesByWriter
         public List<Article> TGetAll()
         {
             return _articleDal.GetAll();
         }
 
         public List<Article> TGetArticlesByWriter(int id)
-        {
+        { 
             return _articleDal.GetArticlesByWriter(id);
         }
 
