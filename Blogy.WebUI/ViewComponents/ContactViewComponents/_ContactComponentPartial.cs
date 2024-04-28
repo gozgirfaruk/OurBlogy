@@ -1,13 +1,14 @@
-﻿using Blogy.DataAccessLayer.Context;
+﻿using Blogy.BusinessLayer.Concrete;
+using Blogy.DataAccessLayer.Context;
+using Blogy.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.ViewComponents.ContactViewComponents
 {
 	public class _ContactComponentPartial : ViewComponent
 	{
-		BlogyContext context = new BlogyContext();
-		public IViewComponentResult Invoke()
-		{ 
+		public IViewComponentResult Invoke(Contact contact)
+		{
 			return View();
 		}
 	}

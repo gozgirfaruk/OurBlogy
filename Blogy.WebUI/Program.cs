@@ -21,6 +21,9 @@ builder.Services.AddScoped<ICategoryService,CategoryMenager>();
 builder.Services.AddScoped<IArticleService,ArticleMenager>();
 builder.Services.AddScoped<IArticleDal,EfArticleDal>();
 
+builder.Services.AddScoped<IContactDal,EfContactDal>();
+builder.Services.AddScoped<IContactService,ContactMenager>();
+
 builder.Services.AddScoped<IWriterService,WriterMenager>();
 builder.Services.AddScoped<IWriterDal,EfWriterDal>();
 
@@ -61,6 +64,8 @@ app.UseStaticFiles();
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseStatusCodePagesWithReExecute("/Error/Index/");
 
 app.MapControllerRoute(
     name: "default",

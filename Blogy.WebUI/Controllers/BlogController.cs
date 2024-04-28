@@ -23,7 +23,7 @@ namespace Blogy.WebUI.Controllers
             return View();
         }
 
-        public IActionResult AllBlogList()
+        public IActionResult AllBlogList(string p)
         {
             var values = _article.GetArticleWithCategory();
          

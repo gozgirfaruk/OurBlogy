@@ -21,7 +21,11 @@ namespace Blogy.WebUI.Areas.Writer.Controllers
         public async Task<IActionResult>  Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
             ViewBag.one = _blogyContext.Articles.Where(x=>x.AppUserID==user.Id).Count();
+            ViewBag.two = _blogyContext.Contacts.Count();
+            ViewBag.three = _blogyContext.Tags.Select(x => x.TagTitle).FirstOrDefault().ToString();
+ 
 
             ViewBag.nine = _blogyContext.Categories.Count();
 

@@ -1,4 +1,4 @@
-﻿
+﻿@model Contact
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
@@ -23,7 +23,30 @@
 		<div class="container">
 			<div class="row">
 				@await Component.InvokeAsync("_AdressComponentPartial")
-				@await Component.InvokeAsync("_ContactComponentPartial")
+				@* @await Component.InvokeAsync("_ContactComponentPartial") *@
+
+				<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+					<form method="post">
+						<div class="row">
+							<div class="col-6 mb-3">
+								<input type="text" class="form-control" name="Name" placeholder="Adınız" >
+							</div>
+							<div class="col-6 mb-3">
+								<input type="email" class="form-control" name="Mail" placeholder="e-Posta Adresiniz">
+							</div>
+							<div class="col-12 mb-3">
+								<input type="text" class="form-control" name="Subject" placeholder="Konu Başlığı">
+							</div>
+							<div class="col-12 mb-3">
+								<textarea name="Messages"  cols="30" rows="7" class="form-control" placeholder="Mesajınız"></textarea>
+							</div>
+
+							<div class="col-12">
+								<input type="submit" value="Gönder" class="btn btn-primary">
+							</div>
+						</div>
+					</form>
+				</div>
 				
 			</div>
 		</div>

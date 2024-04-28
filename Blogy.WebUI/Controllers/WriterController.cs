@@ -1,9 +1,18 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogy.DataAccessLayer.Context;
+using Blogy.EntityLayer.Concrete;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
 {
     public class WriterController : Controller
     {
+        private readonly BlogyContext _context;
+
+        public WriterController(BlogyContext context)
+        {
+            _context = context;
+        }
+       
         public IActionResult Index()
         {
             return View();
