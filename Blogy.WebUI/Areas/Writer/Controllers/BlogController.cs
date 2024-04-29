@@ -54,5 +54,27 @@ namespace Blogy.WebUI.Areas.Writer.Controllers
             _articleService.TDelete(id);
             return RedirectToAction("MyBlogList");
         }
+
+
+        [HttpGet]
+        public IActionResult EditBlog(int id)
+        {
+            List<SelectListItem> item = (from vol in _categoryService.TGetAll()
+                                         select new SelectListItem
+                                         {
+                                             Text = vol.CategoryName,
+                                             Value = vol.CategoryID.ToString()
+                                         }).ToList();
+            ViewBag.v = item;
+            var values = _articleService.TGetyById(id);
+            return View(values);
+        }
+
+        [HttpPost]
+        public IActionResult EditBlog(Article article)
+        {
+            _articleService.TUpdate(article);
+            return RedirectToAction("MyBlogList");
+        }
     }
 }

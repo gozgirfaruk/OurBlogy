@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewData["Title"] = "SevenDays";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div class="container-scroller">
+        
+                <div class="content-wrapper pb-0">
+                    
+                    <div class="row">
+                        <div class="col-xl-12 grid-margin stretch-card">
+                            <div class="card card-calender">
+                                <div class="card-body">
+                                    <div class="row pt-4">
+                                        <div class="col-sm-6">
+                                            <h1 class="text-white">Saat: @DateTime.Now.Hour : @DateTime.Now.Minute</h1>
+                                            <h5 class="text-white">@DateTime.Now.ToString("MM MMM yyyy - dddd")</h5>
+                                            <br /><br /><br />
+                                    <h5 class="text-white m-0">
+                                        <i class="fa-light fa-wind" style="color: #ffffff;"></i>
+                                                Rüzgar Hızı :@ViewBag.wind km/Saat</h5>
+                                        </div>
+                                        <div class="col-sm-6 text-sm-right pt-3 pt-sm-0">
+                                            <h3 class="text-white">Hava Durumu</h3>
+                                            <p class="text-white m-0">Gaziantep, TR</p>
+                                    <h3 class="text-white m-0">@ViewBag.today °C</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <div class="col-sm-12">
+                                            <ul class="d-flex pl-0 overflow-auto">
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center active">
+                                                    <p class="mb-0">Pazartesi</p>
+                                            <i class="fa-light fa-sun-cloud fa-xl"></i>
+                                                    <p class="mb-0">29<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Salı</p>
+                                            <i class="fa-light fa-clouds-sun fa-xl"></i>
+                                                    <p class="mb-0">24<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Çarşamba</p>
+                                            <i class="fa-light fa-cloud-showers fa-xl"></i>
+                                                    <p class="mb-0">22<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Perşembe</p>
+                                            <i class="fa-light fa-cloud-bolt fa-xl"></i>
+                                                    <p class="mb-0">22<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Cuma</p>
+                                            <i class="fa-light fa-clouds-sun fa-xl"></i>
+                                                    <p class="mb-0">21<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Cumartesi</p>
+                                            <i class="fa-light fa-clouds-sun fa-xl"></i>
+                                                    <p class="mb-0">21<span class="symbol">°c</span></p>
+                                                </li>
+                                                <li class="weakly-weather-item text-white font-weight-medium text-center">
+                                                    <p class="mb-0">Pazar</p>
+                                            <i class="fa-light fa-clouds fa-xl"></i>
+                                                    <p class="mb-0">19<span class="symbol">°c</span></p>
+                                                </li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <!-- main-panel ends -->
+        </div>
+</body>
+</html>

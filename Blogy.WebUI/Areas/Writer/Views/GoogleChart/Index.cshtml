@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+    <div id="myChart" style="width:800px;  height:600px;">
+    </div>
+
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+            // Set Data
+            const data = google.visualization.arrayToDataTable([
+                ['Contry', 'Mhl'],
+                ['Spor', @ViewBag.a],
+                ['Kitap', @ViewBag.b],
+                ['Müzik', @ViewBag.c],
+                ['Moda', @ViewBag.d],
+                ['Evcil Hayvanlar', @ViewBag.e]
+            ]);
+
+            // Set Options
+            const options = {
+                title: 'Bloglara ait grafik'
+            };
+
+            // Draw
+            const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+            chart.draw(data, options);
+
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+

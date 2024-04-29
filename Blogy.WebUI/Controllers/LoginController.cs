@@ -2,13 +2,14 @@
 using Blogy.DataAccessLayer.Context;
 using Blogy.EntityLayer.Concrete;
 using Blogy.WebUI.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
 {
-    
-    
+
+    [AllowAnonymous]
     public class LoginController : Controller
     {
 
@@ -42,7 +43,7 @@ namespace Blogy.WebUI.Controllers
                     var deger = await _userManager.FindByNameAsync(p.Username);
                     if (deger.Status != false)
                     {
-                        return RedirectToAction("MyBlogList", "Blog");
+                        return RedirectToAction("MyBlogList", "Blog" , new {Areas="Writer"});
                     }
                     else
                     {
