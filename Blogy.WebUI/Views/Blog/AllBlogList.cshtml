@@ -64,9 +64,10 @@
 
 
 					@await Component.InvokeAsync("_AllBlogListSideBarPartialComponent")
+					@await Html.PartialAsync("AllBlogTagPartial")
 					@await Component.InvokeAsync("_CategoryListPartialComponent")
 					
-					@await Html.PartialAsync("AllBlogTagPartial")
+					
 
 				</div>
 			</div>
