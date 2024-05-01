@@ -1,4 +1,5 @@
 ﻿using Blogy.BusinessLayer.Abstract;
+using Blogy.DataAccessLayer.Context;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
@@ -14,7 +15,9 @@ namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
 
         public IViewComponentResult Invoke(int id)
         {
+          
             var values = _commentService.TGetCommentByArticleID(id);
+            
             return View(values);
         }
 
