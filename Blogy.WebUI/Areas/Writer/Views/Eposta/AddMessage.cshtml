@@ -1,0 +1,23 @@
+﻿@model MessageBox
+@{
+    ViewData["Title"] = "AddMessage";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<a href="~/lib/jquery/dist/jquery.min.map"></a>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<form class="form-group" method="post">
+    <label>Alıcı Mail Adresi</label>
+    @Html.TextBoxFor(x => x.ReceiverMail, new { @class = "form-control", @required = "required" })
+    <br />
+
+    <label>Konu Başlığı</label>
+    @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @required = "required" })
+    <br />
+    <label>Konu İçeriği</label>
+    @Html.TextBoxFor(x => x.Text, new { @class = "form-control", @required = "required" })
+    <br />
+    <button class="btn btn-primary" href="/Writer/Eposta/AddMessage">Gönder</button>
+</form>
+

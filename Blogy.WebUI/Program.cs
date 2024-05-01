@@ -32,6 +32,9 @@ builder.Services.AddScoped<IWriterDal,EfWriterDal>();
 builder.Services.AddScoped<IAboutDal,EfAboutDal>();
 builder.Services.AddScoped<IAboutService,AboutMenager>();
 
+builder.Services.AddScoped<IMessageBoxDal, EfMessageBoxDal>();
+builder.Services.AddScoped<IMessageBoxService,MessageBoxMenager>();
+
 builder.Services.AddScoped<ICommentDal,EfCommentDal>();
 builder.Services.AddScoped<ICommentService,CommentMenager>();
 

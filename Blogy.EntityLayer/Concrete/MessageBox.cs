@@ -1,0 +1,22 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Blogy.EntityLayer.Concrete
+{
+    public class MessageBox
+    {
+        public int MessageBoxID { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
+        public string SenderName { get; set; }
+        public string ReceiverName { get; set; }
+        public string ReceiverMail { get; set; }
+        public string SenderMail { get; set; }
+        public DateTime Date { get; set; }
+
+
+    }
+}

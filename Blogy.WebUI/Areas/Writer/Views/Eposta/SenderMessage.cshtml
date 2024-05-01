@@ -1,0 +1,50 @@
+﻿@model List<MessageBox>
+@{
+    ViewData["Title"] = "SenderMessage";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="g-sidenav-show  bg-gray-100">
+    <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
+        <div class="container-fluid py-4">
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <div class="card">
+                        <div class="card-header pb-0 px-3">
+                            <h6 class="mb-0">Gönderilen Kutusu</h6>
+                        </div>
+                        <div class="card-body pt-4 p-3">
+                            <ul class="list-group">
+                                @foreach (var item in Model)
+                                {
+                                    <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="mb-3 text-sm">@item.ReceiverName</h6>
+                                            <span class="mb-2 text-xs">Mesaj Başlığı : <span class="text-dark font-weight-bold ms-sm-2">@item.Title</span></span>
+                                            <span class="mb-2 text-xs">Email Adresi: <span class="text-dark ms-sm-2 font-weight-bold">@item.ReceiverMail</span></span>
+                                            <span class="text-xs">Gönderilme Tarihi: <span class="text-dark ms-sm-2 font-weight-bold">@item.Date.ToString("dd MMMM yyyyy")</span></span>
+                                        </div>
+                                        <div class="ms-auto text-end">
+                                            <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="/Writer/Eposta/Delete/@item.MessageBoxID"><i class="fa-light fa-eraser"></i>Sil</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0" href="/Writer/Eposta/AddMessage"><i class="fa-light fa-pen-to-square" style="color:darkblue"></i>Yanıtla</a>
+                                            <a class="btn btn-link text-dark px-3 mb-0" href="/Writer/Eposta/SenderMessageDetail/@item.MessageBoxID"><i class="fa-light fa-envelope-open" aria-hidden="true"></i>Oku</a>
+                                        </div>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+
+</html>

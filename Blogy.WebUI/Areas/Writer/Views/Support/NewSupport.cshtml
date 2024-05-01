@@ -1,0 +1,42 @@
+﻿@model MessageBox
+
+@{
+    ViewData["Title"] = "NewSupport";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<body>
+
+    <div class="content-wrapper">
+
+        <div class="row">
+
+            <div class="col-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Yönetici Destek Formu</h4>
+                        <p class="card-description">Yeni Destek Formu Oluştur</p>
+                        <form class="forms-sample" method="post">
+                            <div class="form-group">
+                                <label for="exampleInputName1">Konu Başılığı</label>
+                                <input type="text" class="form-control" asp-for="Title" placeholder="Konu Başlığı Giriniz" />
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail3">Destek Talebiniz</label>
+                                <input type="text" class="form-control" asp-for="Text" placeholder="Destek Talebinizi Anlatan Bir Metin Giriniz" />
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary mr-2" href="/Writer/Support/NewSupport/"> Gönder </button>
+                            <button class="btn btn-light">İptal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
