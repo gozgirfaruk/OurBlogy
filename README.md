@@ -1,4 +1,4 @@
-# Blogy Blog Uygulaması
+![Ekran görüntüsü 2024-05-02 104812](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/f23b21e3-a45d-4afc-b05c-3132e8c03be5)# Blogy Blog Uygulaması
 
 ## Proje Hakkında 
  * Proje temel bağlamda bir blog uygulamasıdır. Blog okurlarının ve yazarlarının bir araya getirildiği, çeşitli başlıklar altında içeriklerin üretildiği ve içerikler hakkında fikir alış-verişinde
@@ -31,9 +31,13 @@
 
 ![Ekran Görüntüsü (73)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/a9d26bd5-df18-42d5-9e22-189cffa204f1)
 
-### Yazar KAyıt
+### Yazar Kayıt
 
 ![Ekran Görüntüsü (75)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/de8aa8b4-bf66-4fd3-82d0-2adf96519347)
+
+### Admin Yazar Listesi
+
+![Ekran görüntüsü 2024-05-02 131842](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/a4ca62b2-0c10-40db-87f7-443e315e4204)
 
 ### Yazar Dashboard
 
@@ -43,7 +47,11 @@
 
 ![Ekran görüntüsü 2024-05-02 101856](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/91d11e30-4d23-472c-a9e5-bbda4c311a36)
 
-### Yazar Dashboard
+### Yazara Ait Blog Listesi
+
+![Ekran görüntüsü 2024-05-02 104812](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/24feba93-ab19-4947-93c6-35395373803b)
+
+### Yazar İstatistik
 
 ![Ekran görüntüsü 2024-05-02 104222](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/93df3a47-0a66-4079-b91c-909a2e320496)
 
@@ -53,4 +61,5 @@
 
 ### Veri Tabanı Diyagram
 
-![Ekran Görüntüsü (84)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/c6247c27-6d57-47c4-9014-b839d0ec553b)
+![Ekran görüntüsü 2024-05-02 133222](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/c34bfc1f-8032-4bbc-91d3-9b14d3ead656)
+
