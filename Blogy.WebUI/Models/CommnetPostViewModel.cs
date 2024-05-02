@@ -2,7 +2,9 @@
 {
     public class CommnetPostViewModel
     {
-        public string Subject { get; set; }
         public int ArticleID { get; set; }
+        public string Subject { get; set; }
+        public string NameSurname { get; set; }
+        public string Mail { get; set; }
     }
 }

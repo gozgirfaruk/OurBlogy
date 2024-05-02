@@ -1,8 +1,10 @@
 ﻿using Blogy.DataAccessLayer.Context;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUI.Controllers
 {
+    [AllowAnonymous]
     public class AboutUsController : Controller
     {
         BlogyContext context = new BlogyContext();

@@ -3,6 +3,7 @@ using Blogy.BusinessLayer.Concrete;
 using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
+using Blogy.WebUI.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +14,7 @@ namespace Blogy.WebUI.Controllers
     {
         private readonly IArticleService _article;
         private readonly BlogyContext _blogyContext;
+        private readonly ICommentService _commentService;
 
 		public BlogController(IArticleService article, BlogyContext blogyContext)
 		{
@@ -37,13 +39,36 @@ namespace Blogy.WebUI.Controllers
             var values = _article.GetArticleWithCategory();
             return PartialView(values);
         }
-
+        [HttpGet]
         public IActionResult BlogDetail(int id)
         {
-            
-           var values = _article.TGetyById(id);
             ViewBag.i = id;
-            return View(values);
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BlogDetail(int id ,Comment comment)
+        {
+            comment.ArticleID= id;
+            comment.CommentDate=Convert.ToDateTime(DateTime.Now.ToShortDateString());
+            comment.Status = true;
+            _commentService.TInsert(comment);
+            return RedirectToAction("BlogList");
+        }
+
+        [HttpPost]
+        public IActionResult InsertComment(CommnetPostViewModel p)
+        {
+            Comment com = new Comment()
+            {
+                ArticleID = p.ArticleID,
+                NameSurname = p.NameSurname,
+                Email = p.Mail,
+                CommentDate = DateTime.Now,
+                Subject = p.Subject
+            };
+            _commentService.TInsert(com);
+           
+            return RedirectToAction("BlogList","Blog");
         }
 
 

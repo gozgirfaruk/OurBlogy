@@ -1,0 +1,66 @@
+﻿@model List<Comment>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+       
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Bloglar</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Yorumlar Tablosu </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Yorum Listesi</h4>
+                   
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Yorum Sahibi</th>
+                                    <th>Yorum Email</th>
+                                    <th>Durum</th>
+                                    <th>Blog</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.CommentID</td>
+                                        <td>@item.NameSurname</td>
+                                        <td>@item.Email</td>
+                                        @if (item.Status == true)
+                                        {
+                                            <td><a href="/Admin/CommentList/StatusUpdate/@item.CommentID" class="btn btn-outline-success">@item.Status</a></td>
+                                        }
+                                        else
+                                        {
+                                            <td><a href="/Admin/CommentList/StatusUpdate/@item.CommentID" class="btn btn-outline-secondary">@item.Status</a></td>
+                                        }
+
+                                        <td>@item.Article.Title</td>
+                                        <td><a href="/Admin/CommentList/Update/@item.CommentID" class="btn btn-outline-danger btn-rounded">Güncelle</a></td>
+                                        <td><a href="/Admin/CommentList/Delete/@item.CommentID" class="btn btn-outline-info btn-rounded">Sil</a></td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

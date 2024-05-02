@@ -1,0 +1,43 @@
+﻿@model About
+@{
+    ViewData["Title"] = "Update";
+    Layout = "~/Areas/Admin/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Hakkımda İşlemleri</a></li>
+                <li class="breadcrumb-item active" aria-current="page"> Hakkımda Güncelleme </li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Blog Güncelleme</h4>
+                    <p class="card-description">
+                        Aşağıdaki alanları eksiksiz doldurarak blog güncelleme işlemini tamamlayabilirsiniz.
+                    </p>
+                    <form method="post">
+                        <label>Hakkımda Başlığı</label>
+                        <input type="text" asp-for="Title" class="form-control" />
+                        <br />
+                        <label>Hakkımda Metni</label>
+                        <input type="text" asp-for="Description" class="form-control" />
+                        <br />
+                        <label>Hakkımda Kapak Fotografı</label>
+                        <input type="text" asp-for="ImageUrl" class="form-control" />
+                        <br />
+                     
+                        <button class="btn btn-outline-info btn-rounded">Güncelle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

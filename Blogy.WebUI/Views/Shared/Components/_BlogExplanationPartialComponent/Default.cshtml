@@ -1,0 +1,21 @@
+﻿@model Article
+<div class="post-content-body">
+
+    <div class="post-content-body">
+        <p>@Html.DisplayFor(x => x.Description)</p>
+        <div class="row my-4">
+            <div class="col-md-12 mb-4">
+                <img src="@Html.DisplayFor(x=>x.CoverImageUrl)" alt="Image placeholder" class="img-fluid rounded">
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="@Html.DisplayFor(x=>x.ImageUrlA)" alt="Image placeholder" class="img-fluid rounded" style="height:300px;">
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="@Html.DisplayFor(x=>x.ImageUrlB)" alt="Image placeholder" class="img-fluid rounded" style="height:300px;">
+            </div>
+        </div>
+        <p>@Html.DisplayFor(x => x.Explanation)</p>
+    </div>
+
+
+</div>

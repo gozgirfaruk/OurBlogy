@@ -1,4 +1,4 @@
-﻿@model Blogy.EntityLayer.Concrete.Article
+﻿@model Comment
 @{
     ViewData["Title"] = "BlogDetail";
     Layout = "~/Views/Shared/_BlogLayout.cshtml";
@@ -8,42 +8,46 @@
 
 <body>
 
-    @await Component.InvokeAsync("_BlogDetailByCoverInfoPartialComponent",new {id=ViewBag.i})
+    @await Component.InvokeAsync("_BlogDetailByCoverInfoPartialComponent", new { id = ViewBag.i })
 
     <section class="section">
         <div class="container">
 
             <div class="row blog-entries element-animate">
                 <div class="col-md-12 col-lg-8 main-content">
+                    @await Component.InvokeAsync("_BlogExplanationPartialComponent", new { id = ViewBag.i })
 
-                    <div class="post-content-body">
-
-                        <div class="post-content-body">
-                            <p>@Html.DisplayFor(x=>x.Description)</p>
-                            <div class="row my-4">
-                                <div class="col-md-12 mb-4">
-                                    <img src="@Html.DisplayFor(x=>x.CoverImageUrl)" alt="Image placeholder" class="img-fluid rounded">
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <img src="@Html.DisplayFor(x=>x.ImageUrlA)" alt="Image placeholder" class="img-fluid rounded" style="height:300px;">
-                                </div>
-                                <div class="col-md-6 mb-4">
-                                    <img src="@Html.DisplayFor(x=>x.ImageUrlB)" alt="Image placeholder" class="img-fluid rounded"style="height:300px;">
-                                </div>
-                            </div>
-                            <p>@Html.DisplayFor(x=>x.Explanation)</p>
-                        </div>
-
-
-                    </div>
 
                     @await Component.InvokeAsync("_BlogDetailCommentPartialComponent", new { id = ViewBag.i })
+                  
+                    <div class="comment-form-wrap pt-5">
+                        <h3 class="mb-5">Yorum Bırakın</h3>
 
+                        <form method="post" class="p-5 bg-light">
+                            <div class="form-group">
+                                <label for="name">Adınız *</label>
+                                <input type="text" class="form-control" id="name" asp-for="NameSurname">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Mail Adresiniz *</label>
+                                <input type="email" class="form-control" id="email" asp-for="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Yorumunuz</label>
+                                <textarea id="message" asp-for="Subject" cols="30" rows="10" class="form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Gönder" class="btn btn-primary">
+                            </div>
+
+                        </form>
+                    </div>
                 </div>
-               
+
                 @await Component.InvokeAsync("_BlogRigtSideWriterPartialComponent", new { id = ViewBag.i })
-                
+
             </div>
+        </div>
     </section>
 </body>
 </html>
@@ -51,6 +55,6 @@
 
 
 
-    
+
 
 

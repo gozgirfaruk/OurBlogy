@@ -15,8 +15,8 @@ namespace Blogy.WebUI.ViewComponents.BlogDetailViewComponents
 
         public IViewComponentResult Invoke(int id)
         {
-          
-            var values = _commentService.TGetCommentByArticleID(id);
+
+            var values = _commentService.TGetCommentByArticleID(id).ToList();
             
             return View(values);
         }

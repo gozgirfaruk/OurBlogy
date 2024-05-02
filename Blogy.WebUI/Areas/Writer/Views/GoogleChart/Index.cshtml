@@ -3,46 +3,225 @@
     Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
 }
 
-<!DOCTYPE html>
-<html>
-<script src="https://www.gstatic.com/charts/loader.js"></script>
 
-<body>
-    <div id="myChart" style="width:800px;  height:600px;">
+<div class="row">
+    <div class="col-lg-6">
+        <div id="chartdiv" style="width:1100px; height:900px">
+        
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(DrawonLoad);
+
+    function DrawonLoad() {
+        $(function () {
+            $.ajax({
+                type: 'GET',
+                url: '/Writer/GoogleChart/Chart/',
+                success: function (chartsdata) {
+                    var Data = chartsdata.jsonlist;
+                    var data = new google.visualization.DataTable();
+
+                    data.addColumn('string', 'categoryname');
+                    data.addColumn('number', 'count');
+
+                    for (var i = 0; i < Data.length; i++) {
+                        data.addRow([Data[i].categoryname, Data[i].count]);
+                    }
+
+                    var chart = new google.visualization.PieChart(document.getElementById('chartdiv'));
+
+                    chart.draw(data,
+                        {
+                            title: "Kategori Blog Oranları",
+                            position: "top",
+                            fontsize: "16px"
+
+                        });
+                }
+            });
+        })
+    }
+</script>
+
+
+
+<div class="row">
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-light">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Kaleme Aldığım Blog Sayısı</p>
+                        <h2 class="text-black">@ViewBag.one</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-file-pen fa-xl bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-info">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">İlk Yazılan Blog</p>
+                        <h2 class="text-black">@ViewBag.ten</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-phone-volume fa-xl bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-warning">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">En Çok Yazılan Kategori</p>
+                        <h2 class="text-black">@ViewBag.three</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-fire-flame-curved bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-danger">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Gelen Mesaj</p>
+                        <h2 class="text-black">@ViewBag.four</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-inbox-out bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-success">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Giden Mesaj</p>
+                        <h2 class="text-black">@ViewBag.five</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-inbox-out bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-secondary">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Bizimle İletişime Geçenler</p>
+                        <h2 class="text-black">@ViewBag.two</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-comment-dots bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-light">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Yayımlanan Son Blog</p>
+                        <h2 class="text-black">@ViewBag.zero</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-calendar-lines-pen bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-info">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Kategoride Blog Yazılabilir</p>
+                        <h2 class="text-black">@ViewBag.eight</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-icons bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-warning">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Kategoride Blog Yazdık</p>
+                        <h2 class="text-black">@ViewBag.nine</h2>
+                    </div>
+                    <i class=""></i>
+                    <i class="card-icon-indicator fa-light fa-memo-pad fa-xl bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-0 pb-lg-0">
+        <div class="card bg-danger">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">İletişime Geçenler</p>
+                        <h2 class="text-black">@ViewBag.two</h2>
+                    </div>
+                    <i class="card-icon-indicator mdi mdi-account-circle bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-success">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Yazardan Biriyim</p>
+                        <h2 class="text-black">@ViewBag.eleven</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-feather fa-xl bg-inverse-icon-success"></i>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <script>
-        google.charts.load('current', { 'packages': ['corechart'] });
-        google.charts.setOnLoadCallback(drawChart);
+    <div class="col-xl-4 col-md-6 stretch-card pb-sm-3 pb-lg-0">
+        <div class="card bg-secondary">
+            <div class="card-body px-3 py-4">
+                <div class="d-flex justify-content-between align-items-start">
+                    <div class="color-card">
+                        <p class="mb-0 color-card-head">Duyuru Sayısı</p>
+                        <h2 class="text-black">@ViewBag.twelve</h2>
+                    </div>
+                    <i class="card-icon-indicator fa-light fa-bullhorn fa-xl bg-inverse-icon-success"></i>
+                </div>
 
-        function drawChart() {
+            </div>
+        </div>
+    </div>
 
-            // Set Data
-            const data = google.visualization.arrayToDataTable([
-                ['Contry', 'Mhl'],
-                ['Spor', @ViewBag.a],
-                ['Kitap', @ViewBag.b],
-                ['Müzik', @ViewBag.c],
-                ['Moda', @ViewBag.d],
-                ['Evcil Hayvanlar', @ViewBag.e]
-            ]);
-
-            // Set Options
-            const options = {
-                title: 'Bloglara ait grafik'
-            };
-
-            // Draw
-            const chart = new google.visualization.PieChart(document.getElementById('myChart'));
-            chart.draw(data, options);
-
-        }
-    </script>
-
-</body>
-</html>
-
-
-
+</div>
 
 
