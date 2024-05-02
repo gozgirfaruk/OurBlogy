@@ -21,45 +21,56 @@
 
 ### Vitrin
 
-![vitrin1](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/1b46a2d1-8eab-49c6-b3e9-8a5be0d6e914)
+![vitrin1](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/82e6c9ee-a3ce-4f6d-989c-90625f6671c2)
 
-![vitrin3](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/54fae251-8c65-4964-90c1-9abed4c575d4)
+### Yazara Ait Blog 
 
-![vitrin4](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/f0306293-433c-4e85-b91a-663d36830688)
+![2](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/999fd94d-fe95-4921-9f1c-1083c4d4e686)
 
-### Yazar Giriş
+### Tüm Bloglar
 
-![Ekran Görüntüsü (73)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/a9d26bd5-df18-42d5-9e22-189cffa204f1)
+![3](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/c2b20696-b397-4d77-8fa1-9baca2c137e7)
+
+### İletişim
+
+![4](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/d1d1b9f2-827c-4521-811e-db25d77c8d29)
+
+### Hakkımızda
+
+![5](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/8efd6e8d-6796-4bae-a43e-db2cce8c7566)
+
+### Yazar Giriş 
+
+![7](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/c0e7529c-6a50-45f2-a04c-b93d921b9849)
 
 ### Yazar Kayıt
 
-![Ekran Görüntüsü (75)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/de8aa8b4-bf66-4fd3-82d0-2adf96519347)
+![8](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/ffce343a-5fe9-45cc-9897-c359ea56c1e4)
 
-### Admin Yazar Listesi
+### Yazar DashBoard
 
-![Ekran görüntüsü 2024-05-02 131842](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/a4ca62b2-0c10-40db-87f7-443e315e4204)
-
-### Yazar Dashboard
-
-![Ekran görüntüsü 2024-05-02 102640](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/ee60e200-abef-4375-bdb7-14aae0a22bcd)
-
-### Yazar Mesaj Kutusu
-
-![Ekran görüntüsü 2024-05-02 101856](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/91d11e30-4d23-472c-a9e5-bbda4c311a36)
-
-### Yazara Ait Blog Listesi
-
-![Ekran görüntüsü 2024-05-02 104812](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/24feba93-ab19-4947-93c6-35395373803b)
+![9](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/91fa486d-e9b8-4a0f-911c-e10598dff2b5)
 
 ### Yazar İstatistik
 
-![Ekran görüntüsü 2024-05-02 104222](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/93df3a47-0a66-4079-b91c-909a2e320496)
+![10](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/4c5a6070-c65c-4ed4-b9f6-74f861a36445)
+
+### Yazar Blog Listesi
+
+![11](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/f5b0939d-9c7d-4530-824f-7105d4d330d1)
+
+### Yazar Gelen Kutusu
+
+![12](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/3f66e585-9eb5-4746-a6dc-3f7e337a36e4)
+
+### Admin Yönetim
+
+![13](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/6c8ded8b-af26-4080-b89c-780404af42bf)
 
 ### Hata Sayfası
 
-![Ekran Görüntüsü (78)](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/789fd33e-6b3b-46c8-b86d-fca1d2d85921)
+![6](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/5536e3de-8600-4f82-8b60-2e7689b47710)
 
-### Veri Tabanı Diyagram
+### Veritabanı Diyagramı
 
-![Ekran görüntüsü 2024-05-02 133222](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/c34bfc1f-8032-4bbc-91d3-9b14d3ead656)
-
+![14](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/234cb177-31e9-4418-950d-3e5842e489d6)
