@@ -1,4 +1,4 @@
-![Ekran görüntüsü 2024-05-02 104812](https://github.com/gozgirfaruk/OurBlogy/assets/125920944/f23b21e3-a45d-4afc-b05c-3132e8c03be5)# Blogy Blog Uygulaması
+# Blogy Blog Uygulaması
 
 ## Proje Hakkında 
  * Proje temel bağlamda bir blog uygulamasıdır. Blog okurlarının ve yazarlarının bir araya getirildiği, çeşitli başlıklar altında içeriklerin üretildiği ve içerikler hakkında fikir alış-verişinde
